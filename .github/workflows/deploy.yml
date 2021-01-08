@@ -38,10 +38,10 @@ jobs:
 
       # Deploy
       - name: Deploy
-        uses: easingthemes/ssh-deploy@v2.0.7
+        uses: easingthemes/ssh-deploy@v2.1.5
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
-          ARGS: "-avz --delete"
+          ARGS: "-rltgoDzvO --delete"
           # 直接部署整个项目
           SOURCE: "index.php"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
