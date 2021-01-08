@@ -290,7 +290,6 @@ jobs:
 
 
 ```yml
-# deploy.yml
 name: retrocode.io to cloud.tencent
 on:
   push:
@@ -301,10 +300,8 @@ jobs:
     # 运行环境:ubuntu
     runs-on: ubuntu-latest
     steps:
-      # 获取当前项目分支源码
       - name: 获取项目源码
         uses: actions/checkout@main
-      # 使用 node:10
       - name: use Node.js 10
         uses: actions/setup-node@v1
         with:
@@ -312,12 +309,12 @@ jobs:
       - name: 校验源码目录
         run: |
           ls -l /home/runner/work/retrocode.io/retrocode.io
-      # Deploy
       - name: 导出源码至轻量云
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
-          ARGS: "-avz --delete"
+          # 使用--chown命令设置同步后的项目所有者
+          ARGS: "-avz --chown=lighthouse:lighthouse --delete"
           # 直接部署整个项目
           SOURCE: ""
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
