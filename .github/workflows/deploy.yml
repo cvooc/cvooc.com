@@ -41,7 +41,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
-          ARGS: "-rltgoDzvO --delete"
+          ARGS: "-avz --delete"
           # 直接部署整个项目
           SOURCE: "index.php"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
