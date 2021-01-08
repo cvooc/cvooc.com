@@ -23,7 +23,7 @@ jobs:
           node-version: 10
       - name: ll
         run: |
-          ls -l
+          ls -l /home/runner/work/retrocode.io/retrocode.io
 #       # npm install
 #       - name: npm install
 #         run: |
