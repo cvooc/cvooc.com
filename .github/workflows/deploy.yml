@@ -22,7 +22,8 @@ jobs:
         with:
           node-version: 10
       - name: ll
-        run: ll
+        run: |
+          ls -l
 #       # npm install
 #       - name: npm install
 #         run: |
