@@ -9,8 +9,8 @@ jobs:
     # 运行环境:ubuntu
     runs-on: ubuntu-latest
     steps:
-      # 切换分支
-      - name: Checkout
+      # 获取当前项目分支源码
+      - name: 获取项目源码
         uses: actions/checkout@main
 #       # 下载 git submodule
 #       - uses: srt32/git-actions@v0.0.3
@@ -21,9 +21,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10
-      - name: ll
+      - name: 校验源码目录
         run: |
-          ls -l /home/runner/work/retrocode.io
+          ls -l /home/runner/work/retrocode.io/retrocode.io
 #       # npm install
 #       - name: npm install
 #         run: |
@@ -40,7 +40,7 @@ jobs:
 #           CI: true
 
       # Deploy
-      - name: Deploy
+      - name: 导出源码至轻量云
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
