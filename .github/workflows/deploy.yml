@@ -16,11 +16,11 @@ jobs:
 #       - uses: srt32/git-actions@v0.0.3
 #         with:
 #           args: git submodule update --init --recursive
-#       # 使用 node:10
-#       - name: use Node.js 10
-#         uses: actions/setup-node@v1
-#         with:
-#           node-version: 10
+      # 使用 node:10
+      - name: use Node.js 10
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
 #       # npm install
 #       - name: npm install
 #         run: |
@@ -43,7 +43,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
           ARGS: "-avz --delete"
           # 直接部署整个项目
-          SOURCE: ""
+          SOURCE: "/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.TARGET }}
