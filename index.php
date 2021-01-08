@@ -135,6 +135,7 @@ unlink($默认侧边栏MD路径);
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
     <!-- 一个用于呈现LaTex数学方程式的 docsify插件。 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
