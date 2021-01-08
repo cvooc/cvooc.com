@@ -21,7 +21,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
-          ARGS: "-avz --usermap='lighthouse' --delete"
+          ARGS: "-avz --chown=lighthouse:lighthouse --delete"
           # 直接部署整个项目
           SOURCE: ""
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
