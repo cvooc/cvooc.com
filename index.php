@@ -133,6 +133,7 @@ unlink($默认侧边栏MD路径);
     <script src="//cdn.jsdelivr.net/npm/docsify-count/dist/countable.min.js"></script>
     <!-- 内置的代码高亮工具是 Prism，默认支持 CSS、JavaScript 和 HTML。如果需要高亮其他语言，例如PHP，可以手动引入代码高亮插件。 -->
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-php.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
