@@ -4,6 +4,31 @@
 
 本以为我对uniapp不说精通至少应该是熟悉了,不过最近接连踩坑,还是决定记录下目前我发现的在大前端开发中需要规避的问题.
 
+## 请在uni.scss中只定义scss变量,在App.vue中引入全局样式文件
+
+正确
+
+```css
+/* App.vue */
+<style lang="scss">
+	/* 注意要写在第一行，否则如果class命名不规范,可能会造成样式污染问题 */
+	@import "./common/index.scss";
+</style>
+/* uni.scss */
+$u-theme-color: red;
+```
+
+错误
+
+```css
+/* uni.scss */
+$u-theme-color: red;
+@import "./common/index.scss";
+```
+
+**uni.scss会编译到每个scss文件中(请着重理解这一句话)**
+uni.scss中所写的一切内容，都会注入到每个声明了scss的文件中(包括组件和页面)，这意味着，如果您的uni.scss如果有几百行，大小10k左右，那么这个10k都会被注入所有的 其他scss文件中，如果您的应用有50个页面和25个组件使用了scss，那么有可能因此导致整体的包体积多了75 * 10 = 750k的大小，这可能会导致小程序包太大超过2MB限制而无法预览和发布， 所以我建议只将scss变量相关的内容放到uni.scss中,同时通过App.vue引入全局变量。
+
 ## 不要在组件上直接添加class
 
 ```js
