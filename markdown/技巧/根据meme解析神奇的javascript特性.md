@@ -1,0 +1,1 @@
+![meme](static/img/根据meme解析神奇的javascript特性/meme.jpg)
