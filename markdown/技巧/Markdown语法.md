@@ -1,4 +1,4 @@
-最后更新时间: {docsify-updated}
+最后更新时间: 2018年6月17日 17:34:47
 
 # Markdown 语法和 MWeb 写作使用说明
 
@@ -212,11 +212,11 @@ Markdown 语法：
 	```
 	```mermaid
 	graph LR
-      A---B
-      B-->C
-      B-->D;
+	  A---B
+	  B-->C
+	  B-->D;
 	```
-  
+
 效果如下：
 
 ```sequence
