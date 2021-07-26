@@ -115,6 +115,15 @@ unlink($默认侧边栏MD路径);
               return this.origin.code.apply(this, arguments);
             }
           }
+        },
+        // 配置备案信息
+        beian: {
+          ICP: "陕ICP备18016129号-3",
+          NISMSP: {
+              number: "",
+              url: "",
+              id: ""
+          }
         }
       }
     </script>
@@ -127,18 +136,6 @@ unlink($默认侧边栏MD路径);
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
     <!-- 在 docsify 中添加备案信息的插件 -->
     <script src ="//cdn.jsdelivr.net/npm/docsify-beian@latest/dist/beian.min.js "></script>
-    <script type="text/javascript">
-      window.$docsify = {
-        beian: {
-          ICP: "陕ICP备18016129号-3",
-          NISMSP: {
-              number: "",
-              url: "",
-              id: ""
-          }
-        }
-      }
-    </script>
     <!-- 在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码。由@jperasmus提供。 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
     <!-- docsify的分页导航插件，由@imyelo提供。 -->
