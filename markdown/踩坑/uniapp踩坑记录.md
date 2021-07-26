@@ -77,7 +77,7 @@ import store from '@/store'
 
 > rpx 即响应式px，一种根据屏幕宽度自适应的动态单位。**以750宽的屏幕为基准，750rpx恰好为屏幕宽度。**屏幕变宽，rpx 实际显示效果会等比放大，**但在 App 端和 H5 端屏幕宽度达到 960px 时，默认将按照 375px 的屏幕宽度进行计算。**
 
-着重理解加粗文字,750rpx为屏幕宽.若你使用的是uniapp的默认配置,这时会有一个很有意思的现象,750为屏幕宽,则uniapp会在处理750rpx这个特殊值时强制将其归一为当前屏幕宽带.
+着重理解加粗文字,750rpx为屏幕宽.若你使用的是uniapp的默认配置,这时会有一个很有意思的现象,750为屏幕宽,则uniapp会在处理750rpx这个特殊值时强制将其归一为当前屏幕宽度.
 
 ![uniapp特殊处理的750rpx.png][2]
 
@@ -93,7 +93,7 @@ import store from '@/store'
 
 换句话说,这是个feature,而不是bug😅,那该如何修正这个问题呢?
 
-实际上这个问题uniapp已经为这一问题做了优化,根据官方文档"宽屏适配指南"指出我们可以在 pages.json 的 globeStyle 里配置 rpx的相关参数
+实际上uniapp已经为这一问题做了优化,根据官方文档"宽屏适配指南"指出我们可以在 pages.json 的 globeStyle 里配置 rpx的相关参数
 
 ```json
 
@@ -113,7 +113,7 @@ import store from '@/store'
 
 {  
 	"globalStyle": {    
-		"rpxCalcMaxDeviceWidth": 960, // rpx计算所支持的最大设备宽度，单位 px，默认值为 960
+		"rpxCalcMaxDeviceWidth": 375, // rpx计算所支持的最大设备宽度，单位 px，默认值为 960
 		"rpxCalcBaseDeviceWidth": 375, // 即当屏幕宽超出rpxCalcMaxDeviceWidth配置宽后，将使用此参数为基础适配rpx
           "maxWidth": 375, // 更多时候我们只是希望移动端页面在PC端不会显示异常，因此我建议上述参数配合maxWidth参数使用，该参数理论上应该与rpxCalcBaseDeviceWidth保持一致，这个参数可以限制body的最大宽度，单位 px，默认1190
 		"rpxCalcIncludeWidth": 0 // 将其设置为0可以解决750强制为屏幕宽的feature问题
