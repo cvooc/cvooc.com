@@ -125,6 +125,20 @@ unlink($默认侧边栏MD路径);
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
     <!-- 默认是提供 emoji 解析的，能将类似 :100: 解析成 100。但是它不是精准的，因为没有处理非 emoji 的字符串。如果你需要正确解析 emoji 字符串，你可以引入这个插件。 -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <!-- 在 docsify 中添加备案信息的插件 -->
+    <script src ="//cdn.jsdelivr.net/npm/docsify-beian@latest/dist/beian.min.js "></script>
+    <script type="text/javascript">
+      window.$docsify = {
+        beian: {
+          ICP: "陕ICP备18016129号-3",
+          NISMSP: {
+              number: "",
+              url: "",
+              id: ""
+          }
+        }
+      }
+    </script>
     <!-- 在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码。由@jperasmus提供。 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
     <!-- docsify的分页导航插件，由@imyelo提供。 -->
