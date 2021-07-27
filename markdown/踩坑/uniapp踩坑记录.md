@@ -124,9 +124,8 @@ import store from '@/store'
 
 ### 参考链接
 
-> [uniapp尺寸单位]:https://uniapp.dcloud.io/frame?id=%e5%b0%ba%e5%af%b8%e5%8d%95%e4%bd%8d
-
-> [宽屏适配指南]:https://uniapp.dcloud.io/adapt?id=_3-%e5%86%85%e5%ae%b9%e7%bc%a9%e6%94%be%e6%8b%89%e4%bc%b8%e7%9a%84%e5%a4%84%e7%90%86
+- [uniapp尺寸单位]:https://uniapp.dcloud.io/frame?id=%e5%b0%ba%e5%af%b8%e5%8d%95%e4%bd%8d
+- [宽屏适配指南]:https://uniapp.dcloud.io/adapt?id=_3-%e5%86%85%e5%ae%b9%e7%bc%a9%e6%94%be%e6%8b%89%e4%bc%b8%e7%9a%84%e5%a4%84%e7%90%86
 
 [1]: /static/img/uniapp踩坑记录/1.png
 [2]: /static/img/uniapp踩坑记录/2.png
