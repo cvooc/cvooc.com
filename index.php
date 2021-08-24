@@ -41,7 +41,7 @@ unlink($默认侧边栏MD路径);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
   <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
