@@ -124,7 +124,18 @@ unlink($默认侧边栏MD路径);
               url: "",
               id: ""
           }
-        }
+        },
+        // 在临时浏览模式时隐藏的dom元素配置
+        queryParamMarkdownEngine:{
+            hideClassName:[
+                'cover',
+                'sidebar',
+                'sidebar-toggle',
+                'github-corner',
+                'docsify-pagination-container',
+                'beian'
+            ]
+        },
       }
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
@@ -151,6 +162,8 @@ unlink($默认侧边栏MD路径);
     <!-- 一个用于呈现LaTex数学方程式的 docsify插件。 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+    <!-- 一个用于临时渲染markdown文件的 docsify插件。 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-to-queryparam-markdown-engine/dist/docsify-to-queryparam-markdown-engine.min.js"></script>
     <!-- 一个用于呈现美人鱼图的 docsify插件。 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
     <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
