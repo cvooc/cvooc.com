@@ -86,8 +86,8 @@ unlink($默认侧边栏MD路径);
         // 配置复制代码功能
         copyCode: {
           buttonText: '点击复制',
-          errorText: '复制成功',
-          successText: '复制失败'
+          errorText: '复制失败',
+          successText: '复制成功'
         },
         // 配置分页插件
         pagination: {
