@@ -50,14 +50,15 @@ unlink($默认侧边栏MD路径);
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"> -->
+    <link rel="stylesheet" href="/static/docsify/vue.css">
   </head>
   <body>
     <div id="app">加载中，请稍后...</div>
     <script>
       var num = 0;
       window.$docsify = {
-        coverpage: '../static/defaultpage/_coverpage.md', // 启用封面页。开启后是加载 _coverpage.md 文件，也可以自定义文件名。
+        // coverpage: '../static/defaultpage/_coverpage.md', // 启用封面页。开启后是加载 _coverpage.md 文件，也可以自定义文件名。
         requestHeaders: {
           'cache-control': 'max-age=600',
         }, // 设置请求资源的请求头。
@@ -138,36 +139,54 @@ unlink($默认侧边栏MD路径);
         },
       }
     </script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <!-- 由于2021/12/20时jsdelivr在国内的ICP证书被吊销,目前他们的CDN在内地已经没有节点服务器,转为从香港获取CDN节点,经测试香港的小水管速度感人,暂时屏蔽CDN转为使用本地静态文件. -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
+    <script src="/static/docsify/docsify.min.js"></script>
     <!-- 全文搜索插件会根据当前页面上的超链接获取文档内容，在 localStorage 内建立文档索引。默认过期时间为一天，当然我们可以自己指定需要缓存的文件列表或者配置过期时间。 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script> -->
+    <script src="/static/docsify/search.min.js"></script>
     <!-- Medium's 风格的图片缩放插件. 基于 medium-zoom。 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script> -->
+    <script src="/static/docsify/zoom-image.min.js"></script>
     <!-- 默认是提供 emoji 解析的，能将类似 :100: 解析成 100。但是它不是精准的，因为没有处理非 emoji 的字符串。如果你需要正确解析 emoji 字符串，你可以引入这个插件。 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script> -->
+    <script src="/static/docsify/emoji.min.js"></script>
     <!-- 在 docsify 中添加备案信息的插件 -->
-    <script src ="//cdn.jsdelivr.net/npm/docsify-beian@latest/dist/beian.min.js "></script>
+    <!-- <script src ="//cdn.jsdelivr.net/npm/docsify-beian@latest/dist/beian.min.js "></script> -->
+    <script src ="/static/docsify/beian.min.js "></script>
     <!-- 在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码。由@jperasmus提供。 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script> -->
+    <script src="/static/docsify/docsify-copy-code.js"></script>
     <!-- docsify的分页导航插件，由@imyelo提供。 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script> -->
+    <script src="/static/docsify/docsify-pagination.min.js"></script>
     <!-- 它提供了统计中文汉字和英文单词的功能，并且排除了一些markdown语法的特殊字符例如*、-等 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-count/dist/countable.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify-count/dist/countable.min.js"></script> -->
+    <script src="/static/docsify/countable.min.js"></script>
     <!-- 内置的代码高亮工具是 Prism，默认支持 CSS、JavaScript 和 HTML。如果需要高亮其他语言，例如PHP，可以手动引入代码高亮插件。 -->
-    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-php.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script> -->
+    <script src="/static/docsify/prism-java.min.js"></script>
+    <script src="/static/docsify/prism-php.min.js"></script>
+    <script src="/static/docsify/prism-json.min.js"></script>
+    <script src="/static/docsify/prism-markdown.min.js"></script>
+    <script src="/static/docsify/prism-yaml.min.js"></script>
     <!-- 一个用于呈现LaTex数学方程式的 docsify插件。 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" /> -->
+    <script src="/static/docsify/docsify-katex.js"></script>
+    <link rel="stylesheet" href="/static/docsify/katex.min.css" />
     <!-- 一个用于临时渲染markdown文件的 docsify插件。 -->
     <!-- <script src="//cdn.jsdelivr.net/npm/docsify-to-queryparam-markdown-engine/dist/docsify-to-queryparam-markdown-engine.min.js"></script> -->
     <script src="/static/js/docsify-to-queryparam-markdown-engine.min.js"></script>
     <!-- 一个用于呈现美人鱼图的 docsify插件。 -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
-    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
+    <link rel="stylesheet" href="/static/docsify/mermaid.min.css">
+    <script src="/static/docsify/mermaid.min.js"></script>
     <script type="text/javascript">
       mermaid.initialize({
         startOnLoad: false
