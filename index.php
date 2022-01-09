@@ -56,7 +56,7 @@ unlink($默认侧边栏MD路径);
   <body>
     <div id="app">加载中，请稍后...</div>
     <script>
-      var num = 0;
+      // var num = 0;
       window.$docsify = {
         // coverpage: '../static/defaultpage/_coverpage.md', // 启用封面页。开启后是加载 _coverpage.md 文件，也可以自定义文件名。
         requestHeaders: {
@@ -107,16 +107,16 @@ unlink($默认侧边栏MD路径);
           isExpected: true // 是否显示预计阅读时长	true(默认值Default) / false
         },
         // 配置markdown解析
-        markdown: {
-          renderer: {
-            code: function (code, lang) {
-              if (lang === "mermaid") {
-                return ('<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>");
-              }
-              return this.origin.code.apply(this, arguments);
-            }
-          }
-        },
+        // markdown: {
+        //   renderer: {
+        //     code: function (code, lang) {
+        //       if (lang === "mermaid") {
+        //         return ('<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>");
+        //       }
+        //       return this.origin.code.apply(this, arguments);
+        //     }
+        //   }
+        // },
         // 配置备案信息
         beian: {
           ICP: "陕ICP备18016129号-3",
@@ -177,21 +177,21 @@ unlink($默认侧边栏MD路径);
     <!-- 一个用于呈现LaTex数学方程式的 docsify插件。 -->
     <!-- <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" /> -->
-    <script src="/static/docsify/docsify-katex.js"></script>
-    <link rel="stylesheet" href="/static/docsify/katex.min.css" />
+    <!-- <script src="/static/docsify/docsify-katex.js"></script>
+    <link rel="stylesheet" href="/static/docsify/katex.min.css" /> -->
     <!-- 一个用于临时渲染markdown文件的 docsify插件。 -->
     <!-- <script src="//cdn.jsdelivr.net/npm/docsify-to-queryparam-markdown-engine/dist/docsify-to-queryparam-markdown-engine.min.js"></script> -->
     <script src="/static/js/docsify-to-queryparam-markdown-engine.min.js"></script>
     <!-- 一个用于呈现美人鱼图的 docsify插件。 -->
     <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
     <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
-    <link rel="stylesheet" href="/static/docsify/mermaid.min.css">
+    <!-- <link rel="stylesheet" href="/static/docsify/mermaid.min.css">
     <script src="/static/docsify/mermaid.min.js"></script>
     <script type="text/javascript">
       mermaid.initialize({
         startOnLoad: false
       });
-    </script>
+    </script> -->
     <!-- 百度统计 -->
     <script>
       var _hmt = _hmt || [];
