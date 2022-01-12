@@ -1,43 +1,49 @@
 <?php
-global $默认侧边栏MD路径;
-$默认侧边栏MD路径 = "./static/defaultpage/_sidebar.md";
+global $sidebarPath;
+$sidebarPath = "./static/defaultpage/_sidebar.md";
 
-function 输出分类列表($markdown文件夹)
+function outCategorys($markdownDir)
 {
-    $分类列表 = scandir($markdown文件夹);
+    $categorys = scandir($markdownDir);
     // markdown文件夹下第一级为 文章分类名
-    foreach ($分类列表 as $分类名) {
+    foreach ($categorys as $categoryName) {
         // 过滤掉./和../路径
-        if ($分类名 !== "." && $分类名 !== "..") {
-            $路径 = $markdown文件夹 . "/" . $分类名;
-            if (is_dir($路径)) {
-                输出文章分类($分类名, $路径);
+        if ($categoryName !== "." && $categoryName !== "..") {
+            $path = $markdownDir . "/" . $categoryName;
+            if (is_dir($path)) {
+                outCategoryName($categoryName, $path);
             }
         }
     }
 }
-function 输出文章分类($分类名, $路径)
+function outCategoryName($categoryName, $path)
 {
-    file_put_contents($GLOBALS['默认侧边栏MD路径'], "* " . $分类名 . "\r\n", FILE_APPEND);
-    输出分类下文章列表($分类名,$路径);
+    file_put_contents($GLOBALS['sidebarPath'], "* " . $categoryName . "\r\n", FILE_APPEND);
+    outCategoryFiles($categoryName,$path);
 }
-function 输出分类下文章列表($分类名,$路径)
+function outCategoryFiles($categoryName, $path)
 {
     // 输出文件夹中的MD文件元素
-    $文件列表 = scandir($路径);
-    foreach ($文件列表 as $文件) {
-        if ($文件 !== "." && $文件 !== ".." && pathinfo($文件, PATHINFO_EXTENSION) === "md") {
-            $文件真实路径 = $分类名 . "/" . $文件;
-            file_put_contents($GLOBALS['默认侧边栏MD路径'], "    * [" . $文件 . "](" . $文件真实路径 . ")\r\n", FILE_APPEND);
+    $files = scandir($path);
+    foreach ($files as $filename) {
+        $suffix =  pathinfo($filename, PATHINFO_EXTENSION);
+        if ($filename !== "." && $filename !== ".." && ($suffix === "md" || $suffix === "auth")) {
+            // 删除加密MD文件中的密码
+            if ($suffix === "auth") {
+              $tmpfns = explode(".", $filename);
+              unset($tmpfns[count($tmpfns)-2]);
+              $filename = implode(".",$tmpfns);
+            }
+            $fileRealPath = $categoryName . "/" . $filename;
+            file_put_contents($GLOBALS['sidebarPath'], "    * [" . $filename . "](" . $fileRealPath . ")\r\n", FILE_APPEND);
         }
-
     }
 }
 
 // 先删除文件
-unlink($默认侧边栏MD路径);
+unlink($sidebarPath);
 // 重新生成侧边栏文件
-输出分类列表("./markdown");
+outCategorys("./markdown");
 ?>
 
 <!DOCTYPE html>
