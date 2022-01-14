@@ -1,3 +1,4 @@
+* .obsidian
 * ABOUT
     * [AboutMe.md](ABOUT/AboutMe.md)
 * Cocos
@@ -31,7 +32,7 @@
     * [WSL2配置代理.md](技巧/WSL2配置代理.md)
     * [WindowsTerminal配置.md](技巧/WindowsTerminal配置.md)
     * [github配置sshkey及TortoiseGit(小乌龟).md](技巧/github配置sshkey及TortoiseGit(小乌龟).md)
-    * [password-123.md.auth](技巧/password-123.md.auth)
+    * [password-123.auth.md](技巧/password-123.auth.md)
     * [shadowsocks使用obfs混淆插件教程.md](技巧/shadowsocks使用obfs混淆插件教程.md)
     * [uni-app打包教程.md](技巧/uni-app打包教程.md)
     * [使用php为docsify添加阅读密码支持.md](技巧/使用php为docsify添加阅读密码支持.md)

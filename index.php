@@ -1,7 +1,13 @@
 <?php
 global $sidebarPath;
 $sidebarPath = "./static/defaultpage/_sidebar.md";
-
+function endWith($haystack, $needle) {
+  $length = strlen($needle);
+  if ($length == 0) {
+    return true;
+  }
+  return (substr($haystack, -$length) === $needle);
+}
 function outCategorys($markdownDir)
 {
     $categorys = scandir($markdownDir);
@@ -27,11 +33,11 @@ function outCategoryFiles($categoryName, $path)
     $files = scandir($path);
     foreach ($files as $filename) {
         $suffix =  pathinfo($filename, PATHINFO_EXTENSION);
-        if ($filename !== "." && $filename !== ".." && ($suffix === "md" || $suffix === "auth")) {
+        if ($filename !== "." && $filename !== ".." && $suffix === "md") {
             // 删除加密MD文件中的密码
-            if ($suffix === "auth") {
+            if (endWith($filename, '.auth.md')) {
               $tmpfns = explode(".", $filename);
-              unset($tmpfns[count($tmpfns)-2]);
+              unset($tmpfns[count($tmpfns)-3]);
               $filename = implode(".",$tmpfns);
             }
             $fileRealPath = $categoryName . "/" . $filename;
