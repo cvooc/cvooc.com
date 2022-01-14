@@ -130,7 +130,7 @@ Markdown 语法：
 ```
 效果如下：
 
-![演示图片](/static/img/Markdown语法/Markdown语法1.jpg)
+![演示图片](./static/img/Markdown语法/Markdown语法1.jpg)
 
 ## 链接
 

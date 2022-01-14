@@ -8,22 +8,16 @@
 3. 解压即可直接使用
 4. 根据提示注册dcloud账号
 5. 点击屏幕左上角(文件\新建\项目),并选择uni-app
-![创建uni-app项目1.png][1]
+![创建uni-app项目1.png](./static/img/uni-app打包教程/3560462644.png)
 6. 创建成功之后,可在项目根目录manifest.json文件,查看appid,若为空请点击右侧 重新获取 按钮
-![查看appid.png][2]
+![查看appid.png](./static/img/uni-app打包教程/4228333237.png)
 7. 请记下appid, 第5步和第6步操作只需要进行一次即可,以后不在需要
 8. 将appid填写到本项目源码下的manifest.json中第3行的 appid:"" 处即可
 9. 将第5\6\7步中创建的项目删除
 10. 再次点击(文件\导入\从本地目录导入)或(文件\打开目录),二者操作都可行
 11. 导入成功后点击(发行\原生App-云打包),此处若有上架app商店需求,请找专人生成证书并在此处导入,之后点击打包,等待打包完成即可
-![云打包.png][3]
+![云打包.png](./static/img/uni-app打包教程/1232654054.png)
 12. 等待打包完成后,点击控制台的链接下载打包后的apk即可
-![打包完成.png][4]
+![打包完成.png](./static/img/uni-app打包教程/1851187033.png)
 ### 后续
 1. 如有二开需求,请访问 https://uniapp.dcloud.io/ 了解学习框架
-
-
-[1]: /static/img/uni-app打包教程/3560462644.png
-[2]: /static/img/uni-app打包教程/4228333237.png
-[3]: /static/img/uni-app打包教程/1232654054.png
-[4]: /static/img/uni-app打包教程/1851187033.png

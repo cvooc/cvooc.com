@@ -18,7 +18,7 @@
 
 #### 1.2. 依赖
 
-![jar](/static/img/log4j配置/log.png)
+![jar](./static/img/log4j配置/log.png)
 
 #### 1.3. 配置文件
 
@@ -53,4 +53,4 @@ logger.info("now {}" , "starting server");
 ```
 
 #### 1.5. 日志打印过滤图解
-![log继承图](/static/img/log4j配置/log继承图.png)
+![log继承图](./static/img/log4j配置/log继承图.png)

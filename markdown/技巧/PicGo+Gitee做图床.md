@@ -7,15 +7,15 @@
 
 #### 首先在[Github](https://github.com/Molunerfinn/PicGo)，下载安装包
 
-![img](\static\img\PicGo+Gitee做图床\1.jpg)
+![img](./static/img/PicGo+Gitee做图床/1.jpg)
 
 #### 安装之后打开主界面
 
-![img](\static\img\PicGo+Gitee做图床\2.jpg)
+![img](./static/img/PicGo+Gitee做图床/2.jpg)
 
 #### 选择最底下的插件设置，搜索**gitee**
 
-![img](\static\img\PicGo+Gitee做图床\3.jpg)
+![img](./static/img/PicGo+Gitee做图床/3.jpg)
 
 #### 点击右边的gitee-uploader 1.1.2开始安装
 
@@ -31,7 +31,7 @@
 
 #### 点击右上角的+号，新建仓库
 
-![img](\static\img\PicGo+Gitee做图床\4.jpg)
+![img](./static/img/PicGo+Gitee做图床/4.jpg)
 
 新建仓库的要点如下：
 
@@ -43,7 +43,7 @@
 
 **这个选项勾上，这样码云会自动给你的仓库建立master分支，这点很重要!!!** 我因为这点折腾了很久，因为使用github做图床picgo好像会自动帮你生成master分支，而picgo里的gitee插件不会帮你自动生成分支。
 
-![img](\static\img\PicGo+Gitee做图床\5.jpg)
+![img](./static/img/PicGo+Gitee做图床/5.jpg)
 
 点击创建进入下一步
 
@@ -55,11 +55,11 @@
 
 #### 配置插件的要点如下：
 
-![img](\static\img\PicGo+Gitee做图床\6.jpg)
+![img](./static/img/PicGo+Gitee做图床/6.jpg)
 
 - repo：用户名/仓库名称，比如我自己的仓库ll630413133/picture_bed，也可以直接复制仓库的url
 
-  ![img](\static\img\PicGo+Gitee做图床\7.jpg)
+  ![img](./static/img/PicGo+Gitee做图床/7.jpg)
 
 - branch：分支，这里写上master
 - token：填入码云的私人令牌
@@ -70,19 +70,19 @@
 
 1. 点击头像，进入设置
 
-![img](\static\img\PicGo+Gitee做图床\8.jpg)
+![img](./static/img/PicGo+Gitee做图床/8.jpg)
 
 1. 找到右边安全设置里面的私人令牌
 
-![img](\static\img\PicGo+Gitee做图床\9.jpg)
+![img](./static/img/PicGo+Gitee做图床/9.jpg)
 
 1. 点击`生成新令牌`，把**projects**这一项勾上，其他的不用勾，然后提交  
 
-   ![img](\static\img\PicGo+Gitee做图床\10.jpg)
+   ![img](./static/img/PicGo+Gitee做图床/10.jpg)
 
    这里需要验证一下密码，验证密码之后会出来一串数字，这一串数字就是你的token，将这串数字复制到刚才的配置里面去。  
 
-   ![img](\static\img\PicGo+Gitee做图床\11.jpg)
+   ![img](./static/img/PicGo+Gitee做图床/11.jpg)
 
    > 注意：这个令牌只会明文显示一次，建议在配置插件的时候再来生成令牌，直接复制进去，搞丢了又要重新生成一个。
 
@@ -90,13 +90,13 @@
 
 还有一个插件**gitee 1.2.2-beta**，功能差不多，`刚才那个能用的话就不需要用这个`，配置的内容有点差别，简单说一下：
 
-![img](\static\img\PicGo+Gitee做图床\12.jpg)
+![img](./static/img/PicGo+Gitee做图床/12.jpg)
 
 - url：图床网站，这里写码云的主页 [https://gitee.com](https://gitee.com/)
 
 - owner：所有者，写上你的码云账号名，如果你不知道你的账号名，进入你刚才的仓库，浏览器url里面有
 
-  ![img](\static\img\PicGo+Gitee做图床\13.jpg)
+  ![img](./static/img/PicGo+Gitee做图床/13.jpg)
 
 - repo：仓库名称，只要写上仓库名称就行，比如我自己的仓库picture_bed
 

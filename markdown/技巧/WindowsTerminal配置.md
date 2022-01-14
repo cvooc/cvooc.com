@@ -9,7 +9,7 @@
 ## 打开配置文件
 
 点击Windows Terminal菜单栏上的**下拉箭头**,然后选择Settings:
-![这里有一张图片](/static/img/WindowsTerminal配置/1.png)
+![这里有一张图片](./static/img/WindowsTerminal配置/1.png)
 
 ## 选择默认启动的终端
 
@@ -165,10 +165,10 @@ HKEY_CLASSES_ROOT\Directory\Background\shell
 新建**项**:`wt`
 然后**点击**wt,**双击**右边的**默认**,在里面输入鼠标右键选项的名称:`Windows Terminal here`
 然后右键wt,选择新建字符串,名为为`Icon`,在里面输入下载好的图标的地址:`F:\软件\图标\terminal.ico`
-![这里有一张图片](/static/img/WindowsTerminal配置/4.png)
+![这里有一张图片](./static/img/WindowsTerminal配置/4.png)
 然后右键wt,选择新建项,输入command
 然后点击command,双击右边的默认,输入Terminal的地址`"%%LOCALAPPDATA%%\Microsoft\WindowsApps\wt.exe\"`即可
-![这里有一张图片](/static/img/WindowsTerminal配置/5.png)
+![这里有一张图片](./static/img/WindowsTerminal配置/5.png)
 
 ### 在当前目录打开
 
@@ -252,9 +252,9 @@ HKEY_CLASSES_ROOT\Directory\Background\shell
 ## 效果
 
 在一个目录下按下鼠标右键,选择**`Window Terminal Here`**：
-![这里有一张图片](/static/img/WindowsTerminal配置/2.png)
+![这里有一张图片](./static/img/WindowsTerminal配置/2.png)
 此时`Terminal`就会在当前目录下打开`cmd`:
-![这里有一张图片](/static/img/WindowsTerminal配置/3.png)
+![这里有一张图片](./static/img/WindowsTerminal配置/3.png)
 
 # 参考资料
 

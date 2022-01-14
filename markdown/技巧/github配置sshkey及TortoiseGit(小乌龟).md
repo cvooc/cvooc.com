@@ -137,29 +137,29 @@ TortoiseGit无法使用git 生成的ssh-key 需要转化为ppk 公钥,然后就�
 
 1. 首先找到TortoiseGit 的安装目录的bin目录,然后找到puttygen.exe 运行 或是 window键打开开始菜单,搜索puttygen 点击运行
 
-![QQ图片20210716163403](/static/img/github配置sshkey及TortoiseGit(小乌龟)/1.png)
+![QQ图片20210716163403](./static/img/github配置sshkey及TortoiseGit(小乌龟)/1.png)
 
 2. 点击conversions 中的 Import key 来加载git生成的ssh key 文件
 
-![image-20210716163544968](/static/img/github配置sshkey及TortoiseGit(小乌龟)/2.png)
+![image-20210716163544968](./static/img/github配置sshkey及TortoiseGit(小乌龟)/2.png)
 
-![image-20210716163635292](/static/img/github配置sshkey及TortoiseGit(小乌龟)/3.png)
+![image-20210716163635292](./static/img/github配置sshkey及TortoiseGit(小乌龟)/3.png)
 
 3. 选择完毕后点击save private key 按钮保存生成的ppk文件下面要用
 
-![image-20210716163734215](/static/img/github配置sshkey及TortoiseGit(小乌龟)/4.png)
+![image-20210716163734215](./static/img/github配置sshkey及TortoiseGit(小乌龟)/4.png)
 
 ### 5.2 加载PPK文件
 
 1. 首先找到TortoiseGit 的安装目录的bin目录,然后找到pageant.exe 运行 或是 window键打开开始菜单,搜索pageant点击运行,他不会直接弹框,需要在任务栏中点击才有弹框
 
-![image-20210716163838257](/static/img/github配置sshkey及TortoiseGit(小乌龟)/5.png)
+![image-20210716163838257](./static/img/github配置sshkey及TortoiseGit(小乌龟)/5.png)
 
-![image-20210716163921293](/static/img/github配置sshkey及TortoiseGit(小乌龟)/6.png)
+![image-20210716163921293](./static/img/github配置sshkey及TortoiseGit(小乌龟)/6.png)
 
 2. 点击add key 选择加载之前保存的ppk 文件,直接close就可以,这样就直接可以使用TortoiseGit提交代码
 
-![image-20210716164034860](/static/img/github配置sshkey及TortoiseGit(小乌龟)/7.png)
+![image-20210716164034860](./static/img/github配置sshkey及TortoiseGit(小乌龟)/7.png)
 
 4. **但是这不是我们现在的最终目的,我们的最终目的是能自动启动加载,咱们接着往下设置**
 
@@ -167,16 +167,16 @@ TortoiseGit无法使用git 生成的ssh-key 需要转化为ppk 公钥,然后就�
 
 1.首先找到TortoiseGit 的安装目录的bin目录,然后找到pageant.exe 运行 或是 window键打开开始菜单,搜索pageant右键打开文件夹所在位置创建并复制快捷方式
 
-![image-20210716164222541](/static/img/github配置sshkey及TortoiseGit(小乌龟)/8.png)
+![image-20210716164222541](./static/img/github配置sshkey及TortoiseGit(小乌龟)/8.png)
 
 2. window+r 输入shell:startup;点击确定将复制好的快捷方式放入该目录下
 
-![image-20210716164326743](/static/img/github配置sshkey及TortoiseGit(小乌龟)/9.png)
+![image-20210716164326743](./static/img/github配置sshkey及TortoiseGit(小乌龟)/9.png)
 
 3.右键属性中找到快捷方式,在目标后面拼上ppk 文件的目录
 
-![image-20210716164442851](/static/img/github配置sshkey及TortoiseGit(小乌龟)/10.png)
+![image-20210716164442851](./static/img/github配置sshkey及TortoiseGit(小乌龟)/10.png)
 
-![image-20210716164506990](/static/img/github配置sshkey及TortoiseGit(小乌龟)/11.png)
+![image-20210716164506990](./static/img/github配置sshkey及TortoiseGit(小乌龟)/11.png)
 
 至此我们的生成ppk文件并设置开机自启动就完成了,之后我们就可以安心的使用小乌龟提交代码,而不需要其他验证了.

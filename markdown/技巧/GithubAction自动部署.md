@@ -142,7 +142,7 @@ jobs:
 
 1. 通过项目中 Secrets 设置变量 XXX， 在配置中通过 ${{ XXX }}  的方式获取。这种变量定义适用于那些涉及到隐私数据的情况。
 
-![img](/static/img/GithubAction自动部署/1.png)
+![img](./static/img/GithubAction自动部署/1.png)
 
 ```yml
 # 这里是 steps 中的一个步骤
