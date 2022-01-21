@@ -21,7 +21,7 @@
 
 进入`控制面板`->`网络和共享中心`->找到VPN的名字并点击,记录下弹出框里的`客户端IPv4地址`,这个后面会用到,然后就可以把VPN断开了.
 
-![0.png](0.png)
+![0.png](./static/img/Windows11配置特定IP走内网VPN/0.png)
 
 ### 1.关闭VPN默认代理配置
 
@@ -29,11 +29,11 @@
 
 进入`控制面板`->`internet选项`->`连接`,这里能看到之前配置的VPN选项,选中要配置的那个VPN后,点击设置
 
-![1.png](技巧/static/img/Windows11配置特定IP走内网VPN/1.png)
+![1.png](./static/img/Windows11配置特定IP走内网VPN/1.png)
 
 点击弹出框`属性`->`网络`->`internet协议版本4`->`属性`
 
-![2.png](技巧/static/img/Windows11配置特定IP走内网VPN/2.png)
+![2.png](./static/img/Windows11配置特定IP走内网VPN/2.png)
 
 > 这些页面一定要点击`确定`来关闭,不然修改没保存不会生效.
 
@@ -43,13 +43,13 @@
 
 挨个点击`确定`关闭之前打开的所有窗口.
 
-![3.png](技巧/static/img/Windows11配置特定IP走内网VPN/3.png)
+![3.png](./static/img/Windows11配置特定IP走内网VPN/3.png)
 
 ### 2.手动添加需要访问VPN的IP
 
 在`开始菜单`上右键,点击`Windosw终端(管理员)`或者`命令提示符(管理员)`
 
-![4.png](技巧/static/img/Windows11配置特定IP走内网VPN/4.png)
+![4.png](./static/img/Windows11配置特定IP走内网VPN/4.png)
 
 在弹窗窗口里输入下列命令并回车
 
@@ -64,7 +64,7 @@ route ADD 你之前连上VPN后需要使用的服务的IP地址 MASK 255.255.255
 route ADD 192.168.0.244 MASK 255.255.255.0 192.168.1.21
 ```
 
-![5.png](技巧/static/img/Windows11配置特定IP走内网VPN/5.png)
+![5.png](./static/img/Windows11配置特定IP走内网VPN/5.png)
 
 至此配置完成,现在可以启动VPN测试下了.
 
