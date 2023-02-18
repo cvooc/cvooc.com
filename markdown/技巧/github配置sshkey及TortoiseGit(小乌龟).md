@@ -1,4 +1,4 @@
-最后更新时间: 2021年7月16日 17:35:30
+最后更新时间: 2023年2月18日 14:26:25
 
 # github配置sshkey及TortoiseGit(小乌龟)
 
@@ -9,6 +9,8 @@
 >- [TortoiseGit(小乌龟)设置pageant开机自启动且自动加载SSH Key](https://blog.csdn.net/qq_41194534/article/details/86478627)
 
 ## 前言
+
+> 截至2023年2月, 部分最新的linux系统已默认禁用rsa-sha1签名算法, 故更新本文档生成sshkey使用到的签名算法为id_ed25519
 
 很多朋友在用github管理项目的时候,都是直接使用https url克隆到本地,当然也有有些人使用 ssh url 克隆到本地.然而,为什么绝大多数人会使用https url克隆呢？
 
@@ -46,15 +48,15 @@ $ ls -al ~/.ssh
 ```javascript
 // 安装git后,在你电脑上打开cmd或 git bash,输入命令
 // your_email@example.com为登录GitHub仓库的邮箱
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -t ed25519 -b 4096 -C "your_email@example.com"
 
 //输入后会询问是否以输出额外文件去保存,这里推荐直接回车,
-//直接回车会在.ssh文件夹 认生成id_rsa 和id_rsa.pub两个文件
+//直接回车会在.ssh文件夹 认生成id_ed25519 和id_ed25519.pub两个文件
 //如果选择额外输出同样会生成类似的两个文件
-Enter file in which to save the key (/c/Users/username/.ssh/id_rsa):
+Enter file in which to save the key (/c/Users/username/.ssh/id_ed25519):
 
 // 如果你曾经配置过,现在要重新生成,会询问你是否覆盖,如果你第一次配置,则不会出现此询问
-/c/Users/username/.ssh/id_rsa already exists.
+/c/Users/username/.ssh/id_ed25519 already exists.
 Overwrite (y/n)?
 
 // 接下来它会询问是否需要密码,建议直接回车,回车默认没有密码
@@ -64,8 +66,8 @@ Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 
 // 提示生成成功,请在C盘>用户>你的用户名>.ssh 去查看
-Your identification has been saved in /c/Users/username/.ssh/id_rsa
-Your public key has been saved in /c/Users/bingq/.ssh/id_rsa.pub
+Your identification has been saved in /c/Users/username/.ssh/id_ed25519
+Your public key has been saved in /c/Users/bingq/.ssh/id_ed25519.pub
 SHA256:略
 The key's randomart image is:略
 ```
@@ -85,23 +87,23 @@ $ eval "$(ssh-agent -s)"
 Host *
 AddKeysToAgent yes
 UseKeychain yes
-IdentityFile ~/.ssh/id_rsa
+IdentityFile ~/.ssh/id_ed25519
 ```
 
 #### 1.3.3 将SSH私钥添加到ssh-agent并将密码存储在密钥链中
 
 ```javascript
-$ ssh-add -K ~/.ssh/id_rsa
+$ ssh-add -K ~/.ssh/id_ed25519
 ```
 
 ## 2. 添加密钥到GitHub
 
-1. 打开 /.ssh/id_rsa.pub 文件,将内容复制到剪贴板
+1. 打开 /.ssh/id_ed25519.pub 文件,将内容复制到剪贴板
 2. 单击右上角头像
 3. 单击`Settings`
 4. 单击`SSH and GPG keys`
 5. 单击 `New SSH Key`
-6. 填写`Title`并将`/.ssh/id_rsa.pub`文件内容粘贴到`Key`
+6. 填写`Title`并将`/.ssh/id_ed25519.pub`文件内容粘贴到`Key`
 7. 单击`Add SSH Key`完成
 8. 如果出现提示,请确认你的GitHub密码
 9. 页面自动跳转后,你会发现你多了一个灰色的钥匙,这是因为你从未使用过这个Key
