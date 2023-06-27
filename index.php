@@ -129,15 +129,17 @@ outCategorys("./markdown");
         //     }
         //   }
         // },
-        // 配置备案信息
-        beian: {
-          ICP: "陕ICP备18016129号-3",
-          NISMSP: {
-              number: "",
-              url: "",
-              id: ""
-          }
-        },
+        <?php
+        // // 配置备案信息
+        // beian: {
+        //   ICP: "陕ICP备18016129号-3",
+        //   NISMSP: {
+        //       number: "",
+        //       url: "",
+        //       id: ""
+        //   }
+        // },
+        ?>
         // 在临时浏览模式时隐藏的dom元素配置
         queryParamMarkdownEngine:{
             hideClassName:[
@@ -165,7 +167,7 @@ outCategorys("./markdown");
     <script src="/static/docsify/emoji.min.js"></script>
     <!-- 在 docsify 中添加备案信息的插件 -->
     <!-- <script src ="//cdn.jsdelivr.net/npm/docsify-beian@latest/dist/beian.min.js "></script> -->
-    <script src ="/static/docsify/beian.min.js "></script>
+    <!-- <script src ="/static/docsify/beian.min.js "></script> -->
     <!-- 在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码。由@jperasmus提供。 -->
     <!-- <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script> -->
     <script src="/static/docsify/docsify-copy-code.js"></script>
