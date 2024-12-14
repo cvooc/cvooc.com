@@ -206,6 +206,8 @@ outCategorys("./markdown");
         startOnLoad: false
       });
     </script> -->
+    <!-- umami统计 -->
+    <script defer src="https://umami.foo.run/random-string.js" data-website-id="a1bfd1c2-6ae3-41f3-a69f-e478bf4bf284"></script>
     <!-- 百度统计 -->
     <script>
       var _hmt = _hmt || [];
