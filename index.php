@@ -58,7 +58,7 @@ outCategorys("./markdown");
     <meta charset="UTF-8">
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
     <title>retrocode</title>
-    <meta name="ShowMeBaby's Blog" content="v1.0" />
+    <meta name="cvooc's Blog" content="v1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -76,7 +76,7 @@ outCategorys("./markdown");
         }, // 设置请求资源的请求头。
         notFoundPage: '../static/defaultpage/_404.md', // 在找不到指定页面时加载_404.md
         routerMode: 'hash', // default: 'hash'/'history'
-        name: 'ShowMeBaby', // 文档标题，会显示在侧边栏顶部。name 项也可以包含自定义 HTML 代码来方便地定制(name: '<span>docsify</span>')
+        name: 'cvooc', // 文档标题，会显示在侧边栏顶部。name 项也可以包含自定义 HTML 代码来方便地定制(name: '<span>docsify</span>')
         noEmoji: false, // 禁用 emoji 解析。
         logo: '../static/logo.svg', // 在侧边栏中出现的网站图标，你可以使用CSS来更改大小
         basePath: '/markdown/', // 文档加载的根路径，可以是二级路径或者是其他域名的路径。
@@ -85,7 +85,7 @@ outCategorys("./markdown");
         autoHeader: true, // 同时设置 loadSidebar 和 autoHeader 后，可以根据 _sidebar.md 的内容自动为每个页面增加标题。
         subMaxLevel: 10, // 自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能。
         auto2top: true, // 切换页面后是否自动跳转到页面顶部。
-        repo: 'https://github.com/ShowMeBaby', // 配置仓库地址或者 username/repo 的字符串，会在页面右上角渲染一个 GitHub Corner 挂件。
+        repo: 'https://github.com/cvooc', // 配置仓库地址或者 username/repo 的字符串，会在页面右上角渲染一个 GitHub Corner 挂件。
         mergeNavbar: true, // 小屏设备下合并导航栏到侧边栏。
         formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}', // 我们可以通过 {docsify-updated} 变量显示文档更新日期. 并且通过 formatUpdated配置日期格式。
         // 配置全文搜索参数
