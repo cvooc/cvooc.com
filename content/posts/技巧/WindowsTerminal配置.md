@@ -1,4 +1,14 @@
-最后更新时间: 2020年4月10日 17:32:10
++++
+author = "cvooc"
+title = "WindowsTerminal配置"
+date = "2020-04-10 17:32:10"
+description = "WindowsTerminal配置"
+tags = [
+    "技巧",
+    "Windows",
+    "ssh",
+]
++++
 
 # 安装
 
@@ -8,7 +18,7 @@
 
 ## 打开配置文件
 
-点击Windows Terminal菜单栏上的**下拉箭头**,然后选择Settings:
+点击 Windows Terminal 菜单栏上的**下拉箭头**,然后选择 Settings:
 ![这里有一张图片](/static/img/WindowsTerminal配置/1.png)
 
 ## 选择默认启动的终端
@@ -62,9 +72,7 @@
 
 复制
 
-
-
-“defaultProfile”这个配置项就是打开Terminal时默认启动的程序,可以看到defaultProfile配置的guid是:
+“defaultProfile”这个配置项就是打开 Terminal 时默认启动的程序,可以看到 defaultProfile 配置的 guid 是:
 
 ```
 "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -72,9 +80,7 @@
 
 复制
 
-
-
-这正是PowerShell的guid:
+这正是 PowerShell 的 guid:
 
 ```
 "profiles":
@@ -89,9 +95,7 @@
 
 复制
 
-
-
-所以如果想启动Terminal时打开的是cmd,只需要修改”defaultProfile”的值为cmd的guid即可:
+所以如果想启动 Terminal 时打开的是 cmd,只需要修改”defaultProfile”的值为 cmd 的 guid 即可:
 
 ```
 0caa0dad-35be-5f56-a8ff-afceeeaa6101
@@ -100,8 +104,6 @@
 ```
 
 复制
-
-
 
 ## 配置快捷键
 
@@ -120,23 +122,21 @@
 
 复制
 
-
-
-- 其中command为功能,例如复制(copy),粘贴(paster)
-- keys为对应的快捷键
+-   其中 command 为功能,例如复制(copy),粘贴(paster)
+-   keys 为对应的快捷键
 
 ## 在鼠标右键打开
 
-### 下载Terminal图标
+### 下载 Terminal 图标
 
 图标地址:https://raw.githubusercontent.com/microsoft/terminal/master/res/terminal.ico
 下载这个图标后,保存到指定位置,我的是(“F:\软件\图标\terminal.ico”)
 
 ### 添加到鼠标右键
 
-####  1. (自动方法)批处理修改注册表
+#### 1. (自动方法)批处理修改注册表
 
-复制下面的批处理代码,然后保存到.bat文件中,以管理员身份运行即可:
+复制下面的批处理代码,然后保存到.bat 文件中,以管理员身份运行即可:
 
 ```
 @echo off
@@ -148,11 +148,9 @@ pause
 
 复制
 
+#### 2.(手动方法) 手动修改注册表
 
-
-####  2.(手动方法) 手动修改注册表
-
-按下Win+R快捷键打开运行,然后输入`regedit`打开**注册表编辑器**,然后在地址栏中输入:
+按下 Win+R 快捷键打开运行,然后输入`regedit`打开**注册表编辑器**,然后在地址栏中输入:
 
 ```
 HKEY_CLASSES_ROOT\Directory\Background\shell
@@ -160,14 +158,12 @@ HKEY_CLASSES_ROOT\Directory\Background\shell
 
 复制
 
-
-
 新建**项**:`wt`
 然后**点击**wt,**双击**右边的**默认**,在里面输入鼠标右键选项的名称:`Windows Terminal here`
-然后右键wt,选择新建字符串,名为为`Icon`,在里面输入下载好的图标的地址:`F:\软件\图标\terminal.ico`
+然后右键 wt,选择新建字符串,名为为`Icon`,在里面输入下载好的图标的地址:`F:\软件\图标\terminal.ico`
 ![这里有一张图片](/static/img/WindowsTerminal配置/4.png)
-然后右键wt,选择新建项,输入command
-然后点击command,双击右边的默认,输入Terminal的地址`"%%LOCALAPPDATA%%\Microsoft\WindowsApps\wt.exe\"`即可
+然后右键 wt,选择新建项,输入 command
+然后点击 command,双击右边的默认,输入 Terminal 的地址`"%%LOCALAPPDATA%%\Microsoft\WindowsApps\wt.exe\"`即可
 ![这里有一张图片](/static/img/WindowsTerminal配置/5.png)
 
 ### 在当前目录打开
@@ -190,8 +186,6 @@ HKEY_CLASSES_ROOT\Directory\Background\shell
 ```
 
 复制
-
-
 
 ## 完整配置示例
 

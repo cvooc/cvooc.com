@@ -20,7 +20,7 @@ Electron 是一个由 GitHub 及众多贡献者组成的活跃社区共同维护
 
 > xp无缘了, 可能需要使用nwjs等方案
 
-![image.png](static/img/[转载]Electron集成Vue/1.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/1.jpg)
 
 ## 二、项目搭建
 
@@ -40,13 +40,13 @@ vue add electron-builder
 
 ```
 
-![image.png](static/img/[转载]Electron集成Vue/2.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/2.jpg)
 
 ### 3. 安装完插件后, 项目中的一些变化
 
 #### ① package.json 新增了几个scripts
 
-![image.png](static/img/[转载]Electron集成Vue/3.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/3.jpg)
 
 ```bash
 
@@ -61,7 +61,7 @@ postinstall 和 postuninstall 是为了确保安装或者移除依赖时, 始终
 
 主进程相关操作, 写在这个文件中
 
-![image.png](static/img/[转载]Electron集成Vue/4.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/4.jpg)
 
 #### ③ 新增了一个环境变量
 
@@ -120,7 +120,7 @@ const win = new BrowserWindow({
 
 由于网络问题, 开发模式无法下载 vue devtool 导致的警告, 需要在 background.js 中注释掉下载代码
 
-![image.png](static/img/[转载]Electron集成Vue/5.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/5.jpg)
 
 ### 3. 项目使用本地的vue devtools
 
@@ -272,7 +272,7 @@ win.on('close', e => {
 
 ### 8. 托盘闪烁与任务栏闪烁
 
-![image.png](static/img/[转载]Electron集成Vue/6.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/6.jpg)
 
 ① 托盘闪烁原理就时定时的切换托盘的图标, 图标与透明图标的切换
 
@@ -413,7 +413,7 @@ app.setAsDefaultProtocolClient(‘testapp’)
 
 ② 在nsis打包配置文件(installer.nsh)中添加配置 在安装的时候在注册表注册URL protocol
 
-![image.png](static/img/[转载]Electron集成Vue/7.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/7.jpg)
 
 ```js
 
@@ -429,9 +429,9 @@ app.setAsDefaultProtocolClient(‘testapp’)
 
 ```
 
-③ 直接在浏览器访问链接即可触发打开客户端 testapp://?参数=值 
+③ 直接在浏览器访问链接即可触发打开客户端 testapp://?参数=值
 
-![image.png](static/img/[转载]Electron集成Vue/8.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/8.jpg)
 
 ④ 获取网页端传来的参数
 
@@ -458,15 +458,15 @@ const handleUrlFromWeb = (urlStr) => {
 
 可以看到获取的参数是个数组, 我们就时要获取最后一项
 
-![image.png](static/img/[转载]Electron集成Vue/9.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/9.jpg)
 
-生产模式下, 如果软件没有提前打开, 通过网页开启时, 需要按照下图方式来获取参数 
+生产模式下, 如果软件没有提前打开, 通过网页开启时, 需要按照下图方式来获取参数
 
-![image.png](static/img/[转载]Electron集成Vue/10.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/10.jpg)
 
-若提前开启, 则在判断单例的条件判断中获取 
+若提前开启, 则在判断单例的条件判断中获取
 
-![image.png](static/img/[转载]Electron集成Vue/11.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/11.jpg)
 
 ### 13. 安装依赖或打包时出现electron包下载过慢问题
 
@@ -475,7 +475,7 @@ const handleUrlFromWeb = (urlStr) => {
 ```bash
 
 registry = https://registry.npm.taobao.org
- 
+
 sass_binary_site = https://npm.taobao.org/mirrors/node-sass/
 phantomjs_cdnurl = http://cnpmjs.org/downloads
 electron_mirror = https://npm.taobao.org/mirrors/electron/
@@ -594,11 +594,11 @@ pluginOptions: {
 
 目前我用asar命令行解压会报错, 但是用7z的插件虽然报错, 却可以完整解压 插件地址: [www.tc4shell.com/en/7zip/asa…](https://www.tc4shell.com/en/7zip/asar/)
 
-![image.png](static/img/[转载]Electron集成Vue/12.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/12.jpg)
 
 下载好, 把dll复制到7z安装目录下新建一个`Formats`文件夹中
 
-![image.png](static/img/[转载]Electron集成Vue/13.jpg)
+![image.png](/static/img/[转载]Electron集成Vue/13.jpg)
 
 ## 四、参考文档
 

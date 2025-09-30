@@ -1,7 +1,19 @@
-最后更新时间: 2022年3月11日 13:56:09
++++
+author = "cvooc"
+title = "webpack性能优化"
+date = "2022-03-11 13:56:09"
+description = "webpack性能优化"
+tags = [
+    "前端",
+		"nodejs",
+		"webpack",
+		"vue",
+]
++++
 
-# webpack性能优化
------------
+# webpack 性能优化
+
+---
 
 今天主要讲解 `Webpack` 的配置，但是随着项目越来越大，构建速度可能会越来越慢，构建出来的`js`的体积也越来越大，此时就需要对 `Webpack` 的配置进行优化。
 
@@ -13,14 +25,14 @@
 npm install speed-measure-webpack-plugin -d
 ```
 
-*   安装完毕之后，使用如下
+-   安装完毕之后，使用如下
 
 ```javascript
 // webpack.base.conf.js文件
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 const smp = new SpeedMeasurePlugin();
-const webpackConfig = {}
-module.exports = smp.wrap(webpackConfig)
+const webpackConfig = {};
+module.exports = smp.wrap(webpackConfig);
 ```
 
 执行 `npm run build`，你会发现插件和`loader`的构建时间，接下来我们一一优化。
@@ -28,7 +40,6 @@ module.exports = smp.wrap(webpackConfig)
 ### 1.`exclude/include`
 
 我们可以通过 `exclude`、`include` 配置来确保转译尽可能少的文件。顾名思义，`exclude` 指定要排除的文件，`include` 指定要包含的文件。
-
 
 `exclude` 的优先级高于 `include`，在 `include` 和 `exclude` 中使用绝对路径数组，尽量避免 `exclude`，更倾向于使用 `include`。
 
@@ -46,7 +57,7 @@ module.exports = smp.wrap(webpackConfig)
    options: {
    symbolId: 'icon-[name]'
    }
-}, 
+},
 ```
 
 ### 2.`HardSourceWebpackPlugin`
@@ -82,31 +93,32 @@ module.exports = {
 抽离公共代码对于单页应用和多页应该在配置上没有什么区别，都是配置在 `optimization.splitChunks` 中。
 
 ```javascript
-module.exports =  {
-	optimization: {
-	  splitChunks: {//分割代码块
-		cacheGroups: {
-		  vendor: {
-			//第三方依赖
-			priority: 1, //设置优先级，首先抽离第三方模块
-			name: 'vendor',
-			test: /node_modules/,
-			chunks: 'initial',
-			minSize: 0,
-			minChunks: 1 //最少引入了1次
-		  },
-		  //缓存组
-		  common: {
-			//公共模块
-			chunks: 'initial',
-			name: 'common',
-			minSize: 100, //大小超过100个字节
-			minChunks: 3 //最少引入了3次
-		  }
-		}
-	  }
-	}
-}
+module.exports = {
+    optimization: {
+        splitChunks: {
+            //分割代码块
+            cacheGroups: {
+                vendor: {
+                    //第三方依赖
+                    priority: 1, //设置优先级，首先抽离第三方模块
+                    name: "vendor",
+                    test: /node_modules/,
+                    chunks: "initial",
+                    minSize: 0,
+                    minChunks: 1, //最少引入了1次
+                },
+                //缓存组
+                common: {
+                    //公共模块
+                    chunks: "initial",
+                    name: "common",
+                    minSize: 100, //大小超过100个字节
+                    minChunks: 3, //最少引入了3次
+                },
+            },
+        },
+    },
+};
 ```
 
 即使是单页应用，同样可以使用这个配置，例如，打包出来的 bundle.js 体积过大，我们可以将一些依赖打包成动态链接库，然后将剩下的第三方依赖拆出来。这样可以有效减小 bundle.js 的体积大小。当然，你还可以继续提取业务代码的公共模块。
@@ -115,7 +127,7 @@ module.exports =  {
 
 如果你对 `babel` 还不太熟悉的话，那么可以阅读这篇文章：[不容错过的 Babel7 知识](https://juejin.cn/post/6844904008679686152)。
 
-在不配置 `@babel/plugin-transform-runtime` 时，`babel` 会使用很小的辅助函数来实现类似 `_createClass` 等公共方法。默认情况下，它将被注入(`inject`)到需要它的每个文件中。但是这样的结果就是导致构建出来的JS体积变大。
+在不配置 `@babel/plugin-transform-runtime` 时，`babel` 会使用很小的辅助函数来实现类似 `_createClass` 等公共方法。默认情况下，它将被注入(`inject`)到需要它的每个文件中。但是这样的结果就是导致构建出来的 JS 体积变大。
 
 我们也并不需要在每个 `js` 中注入辅助函数，因此我们可以使用 `@babel/plugin-transform-runtime`，`@babel/plugin-transform-runtime` 是一个可以重复使用 `Babel` 注入的帮助程序，以节省代码大小的插件。
 
@@ -136,11 +148,11 @@ module.exports =  {
 
 (这些公司项目之前就已经加上去了)
 
-*   `webpack-dashboard`：可以更友好的展示相关打包信息。
-*   `webpack-merge`：提取公共配置，减少重复配置代码
-*   `speed-measure-webpack-plugin`：简称 SMP，分析出 Webpack 打包过程中 Loader 和 Plugin 的耗时，有助于找到构建过程中的性能瓶颈。
-*   `size-plugin`：监控资源体积变化，尽早发现问题
-*   `HotModuleReplacementPlugin`：模块热替换
+-   `webpack-dashboard`：可以更友好的展示相关打包信息。
+-   `webpack-merge`：提取公共配置，减少重复配置代码
+-   `speed-measure-webpack-plugin`：简称 SMP，分析出 Webpack 打包过程中 Loader 和 Plugin 的耗时，有助于找到构建过程中的性能瓶颈。
+-   `size-plugin`：监控资源体积变化，尽早发现问题
+-   `HotModuleReplacementPlugin`：模块热替换
 
 ### 6.MiniCssExtractPlugin
 
@@ -152,10 +164,10 @@ module.exports =  {
 
 与 extract-text-webpack-plugin 相比：
 
-*   异步加载
-*   无重复编译（性能）
-*   更容易使用
-*   特定于 CSS
+-   异步加载
+-   无重复编译（性能）
+-   更容易使用
+-   特定于 CSS
 
 首先，需要安装`mini-css-extract-plugin`：
 
@@ -169,15 +181,15 @@ npm install --save-dev mini-css-extract-plugin
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  plugins: [new MiniCssExtractPlugin()],
-  module: {
-	rules: [
-	  {
-		test: /\.css$/i,
-		use: [MiniCssExtractPlugin.loader, "css-loader"],
-	  },
-	],
-  },
+    plugins: [new MiniCssExtractPlugin()],
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
+            },
+        ],
+    },
 };
 ```
 
@@ -187,7 +199,7 @@ module.exports = {
 
 一个用于优化\\最小化 CSS 资产的 Webpack 插件。
 
-> ⚠️对于 webpack v5 或更高版本，请改用[css-minimizer-webpack-plugin](https://github.com/webpack-contrib/css-minimizer-webpack-plugin)。
+> ⚠️ 对于 webpack v5 或更高版本，请改用[css-minimizer-webpack-plugin](https://github.com/webpack-contrib/css-minimizer-webpack-plugin)。
 
 它将在 Webpack 构建期间搜索 CSS 资源，并将优化\\最小化 CSS（默认情况下它使用[cssnano](http://github.com/ben-eb/cssnano)，但可以指定自定义 CSS 处理器）。
 
@@ -201,53 +213,53 @@ module.exports = {
 npm install --save-dev optimize-css-assets-webpack-plugin
 ```
 
-> ⚠️对于 webpack v3 或更低版本，请使用`optimize-css-assets-webpack-plugin@3.2.0`. 该`optimize-css-assets-webpack-plugin@4.0.0`版本及以上支持 webpack v4。
+> ⚠️ 对于 webpack v3 或更低版本，请使用`optimize-css-assets-webpack-plugin@3.2.0`. 该`optimize-css-assets-webpack-plugin@4.0.0`版本及以上支持 webpack v4。
 
 **webpack.config.js**
 
 ```javascript
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
-  module: {
-	rules: [
-	  {
-		test: /\.css$/,
-		loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-	  }
-	]
-  },
-  plugins: [
-	new ExtractTextPlugin('styles.css'),
-	new OptimizeCssAssetsPlugin({
-	  assetNameRegExp: /\.optimize\.css$/g,
-	  cssProcessor: require('cssnano'),
-	  cssProcessorPluginOptions: {
-		preset: ['default', { discardComments: { removeAll: true } }],
-	  },
-	  canPrint: true
-	})
-  ]
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader"),
+            },
+        ],
+    },
+    plugins: [
+        new ExtractTextPlugin("styles.css"),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.optimize\.css$/g,
+            cssProcessor: require("cssnano"),
+            cssProcessorPluginOptions: {
+                preset: ["default", { discardComments: { removeAll: true } }],
+            },
+            canPrint: true,
+        }),
+    ],
 };
 ```
 
 该插件可以接收以下选项（都是可选的）：
 
-*   `assetNameRegExp`：一个正则表达式，指示应该优化\\最小化的资产的名称。提供的正则表达式针对`ExtractTextPlugin`配置中实例导出的文件的文件名运行，而不是源 CSS 文件的文件名。默认为`/\.css$/g`
-*   `cssProcessor`：用于优化\\最小化 CSS 的 CSS 处理器，默认为[`cssnano`](http://github.com/ben-eb/cssnano). 这应该是一个遵循`cssnano.process`接口的函数（接收 CSS 和选项参数并返回一个 Promise）。
-*   `cssProcessorOptions`: 传递给 的选项`cssProcessor`，默认为`{}`
-*   `cssProcessorPluginOptions`: 传递给 的插件选项`cssProcessor`，默认为`{}`
-*   `canPrint`：一个布尔值，指示插件是否可以将消息打印到控制台，默认为`true`
+-   `assetNameRegExp`：一个正则表达式，指示应该优化\\最小化的资产的名称。提供的正则表达式针对`ExtractTextPlugin`配置中实例导出的文件的文件名运行，而不是源 CSS 文件的文件名。默认为`/\.css$/g`
+-   `cssProcessor`：用于优化\\最小化 CSS 的 CSS 处理器，默认为[`cssnano`](http://github.com/ben-eb/cssnano). 这应该是一个遵循`cssnano.process`接口的函数（接收 CSS 和选项参数并返回一个 Promise）。
+-   `cssProcessorOptions`: 传递给 的选项`cssProcessor`，默认为`{}`
+-   `cssProcessorPluginOptions`: 传递给 的插件选项`cssProcessor`，默认为`{}`
+-   `canPrint`：一个布尔值，指示插件是否可以将消息打印到控制台，默认为`true`
 
 ### 8.tree Shaking
 
-webpack2.x开始⽀持tree shaking概念，顾名思义，"摇树"，就是清除无用css,js(Dead Code)
+webpack2.x 开始⽀持 tree shaking 概念，顾名思义，"摇树"，就是清除无用 css,js(Dead Code)
 
-Dead Code⼀般具有以下⼏个特征：
+Dead Code ⼀般具有以下⼏个特征：
 
-*   代码不会被执⾏，不可到达
-*   代码执⾏的结果不会被⽤到
-*   代码只会影响死变量（只写不读）
-*   Js tree shaking只⽀持ES module的引⼊⽅式！！！！
+-   代码不会被执⾏，不可到达
+-   代码执⾏的结果不会被⽤到
+-   代码只会影响死变量（只写不读）
+-   Js tree shaking 只⽀持 ES module 的引⼊⽅式！！！！
 
 #### Css tree shaking
 
@@ -256,32 +268,32 @@ npm i glob-all purify-css purifycss-webpack --save-dev
 ```
 
 ```javascript
-const PurifyCSS = require('purifycss-webpack')
-const glob = require('glob-all')
-plugins:[
- new PurifyCSS({
-	  paths: glob.sync([
-		// 要做 CSS Tree Sharking 的路径文件
-		path.resolve(__dirname, "./src/*.html"),// 同样需要对html文件进行tree shaking
-		path.resolve(__dirname, "./src/*.js")
-	  ])
-	}),
-]
+const PurifyCSS = require("purifycss-webpack");
+const glob = require("glob-all");
+plugins: [
+    new PurifyCSS({
+        paths: glob.sync([
+            // 要做 CSS Tree Sharking 的路径文件
+            path.resolve(__dirname, "./src/*.html"), // 同样需要对html文件进行tree shaking
+            path.resolve(__dirname, "./src/*.js"),
+        ]),
+    }),
+];
 ```
 
 #### JS tree shaking
 
-只⽀持import⽅式引⼊，不⽀持commonjs的⽅式引⼊
+只⽀持 import ⽅式引⼊，不⽀持 commonjs 的⽅式引⼊
 
-案例：增加expo.js文件
+案例：增加 expo.js 文件
 
 ```javascript
 //expo.js
 export const add = (a, b) => {
- return a + b;
+    return a + b;
 };
 export const minus = (a, b) => {
- return a - b;
+    return a - b;
 };
 
 //index.js
@@ -290,11 +302,11 @@ add(1, 2);
 
 //webpack.config.js
 optimization: {
- usedExports: true // 哪些导出的模块被使⽤了，再做打包
+    usedExports: true; // 哪些导出的模块被使⽤了，再做打包
 }
 ```
 
-只要mode是production就会⽣效，mode是develpoment的tree shaking是不⽣效的，因为webpack为了⽅便你的调试。
+只要 mode 是 production 就会⽣效，mode 是 develpoment 的 tree shaking 是不⽣效的，因为 webpack 为了⽅便你的调试。
 
 可以查看打包后的代码注释以辨别是否⽣效。
 
@@ -302,6 +314,6 @@ optimization: {
 
 参考文档：
 
-[webpack性能优化1](https://juejin.cn/post/6951297954770583565)
+[webpack 性能优化 1](https://juejin.cn/post/6951297954770583565)
 
-[带你深度解锁Webpack系列(优化篇)](https://juejin.cn/post/6844904093463347208)
+[带你深度解锁 Webpack 系列(优化篇)](https://juejin.cn/post/6844904093463347208)

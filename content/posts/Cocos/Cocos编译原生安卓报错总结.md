@@ -9,12 +9,12 @@ tags = [
 ]
 +++
 
-# Cocos踩坑指南
+# Cocos 踩坑指南
 
-1. 编译报错,卡在cpufeatures <= cpu-features.c而导致failed
-   - 原因是 cocos发布路径设置太长导致windows无法创建文件,
-   - 把工程挪到如D盘的根目录,并设置发布路径到如D盘根目录即可
-   - 不要把工程放到桌面!桌面的C盘路径也长!
+1. 编译报错,卡在 cpufeatures <= cpu-features.c 而导致 failed
+    - 原因是 cocos 发布路径设置太长导致 windows 无法创建文件,
+    - 把工程挪到如 D 盘的根目录,并设置发布路径到如 D 盘根目录即可
+    - 不要把工程放到桌面!桌面的 C 盘路径也长!
 
 ```shell
 C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/build//../toolchains/llvm/prebuilt/windows-x86_64/bin/arm-linux-androideabi-ar: C:/Users/Administrator/Desktop/weiduomu/weiduomu/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/armeabi-v7a/objs/cocos2dx_static/scripting/js-bindings/jswrapper/v8/debugger/inspector_socket_server.o: No such file or directory

@@ -1,8 +1,18 @@
-最后更新时间: 2022年1月13日 05:14:08
++++
+author = "cvooc"
+title = "使用php为docsify添加阅读密码支持"
+date = "2022-01-13 05:14:08"
+description = "使用php为docsify添加阅读密码支持"
+tags = [
+    "技巧",
+    "php",
+    "docsify",
+]
++++
 
-# 使用php为docsify添加阅读密码支持
+# 使用 php 为 docsify 添加阅读密码支持
 
-由于docsify是运行时库,出于安全考虑我使用了php对加密文件进行处理,否则加密没有存在意义了.
+由于 docsify 是运行时库,出于安全考虑我使用了 php 对加密文件进行处理,否则加密没有存在意义了.
 
 ## DEMO
 
@@ -12,13 +22,13 @@ Password: 123
 
 ## 演示
 
-![1](static/img/使用php为docsify添加阅读密码支持/1.png)
+![1](/static/img/使用php为docsify添加阅读密码支持/1.png)
 
-![2](static/img/使用php为docsify添加阅读密码支持/2.png)
+![2](/static/img/使用php为docsify添加阅读密码支持/2.png)
 
 ## 使用方式
 
-在md文件后缀追加 .password.auth 即可.
+在 md 文件后缀追加 .password.auth 即可.
 
 > filename.md.passwprd.auth
 
@@ -26,7 +36,7 @@ Password: 123
 
 > testPassword.md.123.auth
 
-同时请将**_sidebar.md**中的文件路径修改为
+同时请将**\_sidebar.md**中的文件路径修改为
 
 > filename.md.auth
 
@@ -35,23 +45,21 @@ Password: 123
 例如:
 
 ```markdown
-
-* category
-    * [testPassword](category/testPassword.md.auth)
-
+-   category
+    -   [testPassword](category/testPassword.md.auth)
 ```
 
-## 配置nginx伪静态,将关于加密文件的请求转发给auth.php
+## 配置 nginx 伪静态,将关于加密文件的请求转发给 auth.php
 
 ```yaml
 location ~* \.(auth.md)$ {
-  if (!-e $request_filename){
-    rewrite  ^(.*)$  /auth.php?s=$1  last;   break;
-  }
+if (!-e $request_filename){
+rewrite  ^(.*)$  /auth.php?s=$1  last;   break;
+}
 }
 ```
 
-## 创建auth.php并放置到与docsify的index.html同目录下
+## 创建 auth.php 并放置到与 docsify 的 index.html 同目录下
 
 ```php
 <?php
@@ -111,7 +119,7 @@ if (isset($_COOKIE['auth']) || isset($_GET['auth'])) {
 
 ## 注意
 
-如果你使用的**_sidebar.md**,则需要在生成**_sidebar.md**文件时对文件名进行处理.
+如果你使用的**\_sidebar.md**,则需要在生成**\_sidebar.md**文件时对文件名进行处理.
 
 例如:
 

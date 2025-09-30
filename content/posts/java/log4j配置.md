@@ -1,4 +1,12 @@
-最后更新时间: 2021年7月16日 17:26:22
++++
+author = "cvooc"
+title = "log4j配置"
+date = "2021-07-16 17:26:22"
+description = "log4j配置"
+tags = [
+    "java"
+]
++++
 
 # 日志
 
@@ -53,4 +61,5 @@ logger.info("now {}" , "starting server");
 ```
 
 #### 1.5. 日志打印过滤图解
+
 ![log继承图](/static/img/log4j配置/log继承图.png)

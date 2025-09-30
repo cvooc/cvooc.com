@@ -1,4 +1,13 @@
-最后更新时间: 2018年6月17日 17:34:47
++++
+author = "cvooc"
+title = "Markdown语法"
+date = "2018-06-17 17:34:47"
+description = "Markdown语法"
+tags = [
+    "技巧",
+		"markdown",
+]
++++
 
 # Markdown 语法和 MWeb 写作使用说明
 
@@ -12,7 +21,7 @@
 
 ## TOC
 
-> docsify会在侧边栏生成目录,此标记解析不会生效
+> docsify 会在侧边栏生成目录,此标记解析不会生效
 
 Markdown 语法：
 
@@ -37,6 +46,7 @@ Markdown 语法：
 效果如下：
 
 # 第一级标题 `<h1>`
+
 ## 第二级标题 `<h2>`
 
 ###### 第六级标题 `<h6>`
@@ -56,11 +66,11 @@ __这些文字会生成`<strong>`__
 在 MWeb 中的快捷键为： `CMD + U`、`CMD + I`、`CMD + B`
 效果如下：
 
-*这些文字会生成`<em>`*
+_这些文字会生成`<em>`_
 _这些文字会生成`<u>`_
 
 **这些文字会生成`<strong>`**
-__这些文字会生成`<strong>`__
+**这些文字会生成`<strong>`**
 
 ## 换行
 
@@ -81,10 +91,10 @@ Markdown 语法：
 
 效果如下：
 
-* 项目一 无序列表 `* + 空格键`
-* 项目二
-	* 项目二的子项目一 无序列表 `TAB + * + 空格键`
-	* 项目二的子项目二
+-   项目一 无序列表 `* + 空格键`
+-   项目二
+    -   项目二的子项目一 无序列表 `TAB + * + 空格键`
+    -   项目二的子项目二
 
 ### 有序列表
 
@@ -103,8 +113,8 @@ Markdown 语法：
 1. 项目一 有序列表 `数字 + . + 空格键`
 2. 项目二
 3. 项目三
-	1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`
-	2. 项目三的子项目二
+    1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`
+    2. 项目三的子项目二
 
 ### 任务列表（Task lists）
 
@@ -117,8 +127,8 @@ Markdown 语法：
 
 效果如下：
 
-- [ ] 任务一 未做任务 `- + 空格 + [ ]`
-- [x] 任务二 已做任务 `- + 空格 + [x]`
+-   [ ] 任务一 未做任务 `- + 空格 + [ ]`
+-   [x] 任务二 已做任务 `- + 空格 + [x]`
 
 ## 图片
 
@@ -128,6 +138,7 @@ Markdown 语法：
 ![演示图片](/static/img/Markdown语法/Markdown语法1.jpg)
 格式: ![Alt Text](url)
 ```
+
 效果如下：
 
 ![演示图片](/static/img/Markdown语法/Markdown语法1.jpg)
@@ -141,8 +152,9 @@ email <example@example.com>
 [GitHub](http://github.com)
 自动生成连接  <http://www.github.com/>
 ```
+
 Email 连接： <example@example.com>
-[连接标题Github网站](http://github.com)
+[连接标题 Github 网站](http://github.com)
 自动生成连接像： <http://www.github.com/> 这样
 
 ## 区块引用
@@ -158,6 +170,7 @@ Markdown 语法：
 效果如下：
 
 某某说:
+
 > 第一行引用
 > 第二行费用文字
 
@@ -168,6 +181,7 @@ Markdown 语法：
 ```
 像这样即可：`<addr>` `code`
 ```
+
 效果如下：
 像这样即可：`<addr>` `code`
 
@@ -175,20 +189,21 @@ Markdown 语法：
 
 Markdown 语法：
 
-	```js
-	function fancyAlert(arg) {
-	  if(arg) {
-	    $.facebox({div:'#foo'})
-	  }
-	}
-	```
+    ```js
+    function fancyAlert(arg) {
+      if(arg) {
+        $.facebox({div:'#foo'})
+      }
+    }
+    ```
+
 效果如下：
 
 ```js
 function fancyAlert(arg) {
-	if(arg) {
-		$.facebox({div:'#foo'})
-	}
+    if (arg) {
+        $.facebox({ div: "#foo" });
+    }
 }
 ```
 
@@ -196,26 +211,26 @@ function fancyAlert(arg) {
 
 Markdown 语法：
 
-	```sequence
-	张三->李四: 嘿，小四儿, 写博客了没?
-	Note right of 李四: 李四愣了一下，说：
-	李四-->张三: 忙得吐血，哪有时间写。
-	```
-	```flow
-	st=>start: 开始
-	e=>end: 结束
-	op=>operation: 我的操作
-	cond=>condition: 确认？
-	st->op->cond
-	cond(yes)->e
-	cond(no)->op
-	```
-	```mermaid
-	graph LR
-	  A---B
-	  B-->C
-	  B-->D;
-	```
+    ```sequence
+    张三->李四: 嘿，小四儿, 写博客了没?
+    Note right of 李四: 李四愣了一下，说：
+    李四-->张三: 忙得吐血，哪有时间写。
+    ```
+    ```flow
+    st=>start: 开始
+    e=>end: 结束
+    op=>operation: 我的操作
+    cond=>condition: 确认？
+    st->op->cond
+    cond(yes)->e
+    cond(no)->op
+    ```
+    ```mermaid
+    graph LR
+      A---B
+      B-->C
+      B-->D;
+    ```
 
 效果如下：
 
@@ -243,8 +258,11 @@ graph LR
 ```
 
 更多请参考：<http://bramp.github.io/js-sequence-diagrams/>, <http://adrai.github.io/flowchart.js/>
+
 ## 表格
+
 Markdown 语法：
+
 ```
 第一格表头 | 第二格表头
 --------- | -------------
@@ -254,16 +272,16 @@ Markdown 语法：
 
 效果如下：
 
-第一格表头 | 第二格表头
---------- | -------------
-内容单元格 第一列第一格 | 内容单元格第二列第一格
-内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格
+| 第一格表头                       | 第二格表头             |
+| -------------------------------- | ---------------------- |
+| 内容单元格 第一列第一格          | 内容单元格第二列第一格 |
+| 内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格 |
 
 ## 删除线
 
 Markdown 语法：
 
-	加删除线像这样用： ~~删除这些~~
+    加删除线像这样用： ~~删除这些~~
 
 效果如下：
 
@@ -272,17 +290,23 @@ Markdown 语法：
 ## 分隔线
 
 以下三种方式都可以生成分隔线：
-	***
-	*****
-	- - -
+**\*
+\*\*\*** - - -
 效果如下：
-***
-*****
-- - -
+
+---
+
+---
+
+---
+
 ## Math
+
 Markdown 语法：
+
 ```
 $$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 ```
+
 效果如下：
-$$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+$$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$

@@ -12,9 +12,9 @@ Password: 123
 
 ## 演示
 
-![1](static/img/使用php为docsify添加阅读密码支持/1.png)
+![1](/static/img/使用php为docsify添加阅读密码支持/1.png)
 
-![2](static/img/使用php为docsify添加阅读密码支持/2.png)
+![2](/static/img/使用php为docsify添加阅读密码支持/2.png)
 
 ## 使用方式
 

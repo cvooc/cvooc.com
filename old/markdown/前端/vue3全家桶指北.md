@@ -10,7 +10,7 @@
 
 `Vue3` 比 `Vue2` 更快、更小，体积缩小了 `41%`，渲染速度提升 `33%`，内存用量下降 `54%`。更加灵活的 `Composition API` 以及完美支持 `TypeScript`。通过这些数字和优点，都是非常值得我们把 `Vue3`好好 学习一波！下面我们对 `Vue3` 里常见的 `Compsition API` 进行详解。
 
-![img](static/img/vue3全家桶指北/1.jpg)
+![img](/static/img/vue3全家桶指北/1.jpg)
 
 [Vue3中文文档](https://v3.cn.vuejs.org/)
 
@@ -34,17 +34,17 @@ export default {
     ..., // 可以定义一些Vue2时的options
     setup() {
         const num = ref(666); // 定义一个响应式的常量
-        
+
         const sum = (a, b) => a + b; // 定义一个方法
-        
+
         const double = computed(() => num.value+1) // 定义一个计算属性
-        
+
         onMounted(() => {
             console.log('页面加载完执行的生命周期钩子函数')
         })
-        
+
         // ...等等都可以定义在setup函数中
-        
+
         return { // 导出定义的变量和方法，在模板中使用
             num,
             sum,
@@ -84,7 +84,7 @@ export default {
         const age    = ref(25);    // 定义 Number 类型的变量
         const name   = ref('tmc'); // 定义 String 类型的变量
         const refDom = ref(null);  // 可以访问到 Dom 元素
-        
+
         return {
             flag,
             age,
@@ -115,7 +115,7 @@ export default {
             name: 'tmc',
             age: 25
         })
-        
+
         return {
             state
         }
@@ -147,7 +147,7 @@ export default {
             name: 'tmc',
             age: 25
         })
-        
+
         return {
             ...toRefs(data)
         }
@@ -175,10 +175,10 @@ export default {
             age: 25
         })
         const data2 = ref(666)
-        
+
         const changeData1 = toRaw(data1)
         const changeData2 = toRaw(data2.value)
-        
+
         return {
             ...toRefs(data)
         }
@@ -193,7 +193,7 @@ export default {
 
 > provide & inject：父组件通过provide选项提供数据，子组件通过inject选项接受并使用所提供的数据
 
-![img](static/img/vue3全家桶指北/2.jpg)
+![img](/static/img/vue3全家桶指北/2.jpg)
 
 ```html
 <!-- 父组件 -->
@@ -265,12 +265,12 @@ export default {
    export default {
        setup() {
            const name = ref('tmc');
-              
+
            watch(name, (newVal, oldVal) => {
                console.log('新值：' + newVal)
                console.log('旧值：' + oldVal)
            })
-              
+
        }
    }
    </script>
@@ -290,13 +290,13 @@ export default {
                name: 'tmc',
                age: 25
            });
-              
+
            // 监听单个属性
            watch(() => data.name, (newVal, oldVal) => {
                console.log('新值：' + newVal)
                console.log('旧值：' + oldVal)
            })
-              
+
            // 监听多个属性
            watch(() => [data.name, data.age], ([newName, oldName], [newAge, oldAge]) => {
                console.log('新值：' + newName)
@@ -304,7 +304,7 @@ export default {
                console.log('新值：' + newAge)
                console.log('旧值：' + oldAge)
            })
-              
+
        }
    }
    </script>
@@ -378,24 +378,24 @@ import { Vuex } from 'vuex';
 import _ from 'lodash';
 export function useLoadMore(refreshEle: Ref<null | HTMLElement>, store: Store<IGlobalState>, type: string) {
     let element: HTMLElement; // 需要滚动的元素
-    
+
 
     function _loadMore() {
         let containerHeight = element.clientHeight; // 获取可视区域的高度
         let scrollTop = element.scrollTop; // 获取滚动的高度
         let scrollHeight = element.scrollHeight; // 获取这个列表的高度
-        
+
         if(containerHeight + scrollTop + 25 >= scrollHeight) {
             store.dispatch(type); // 派发action
         }
     }
-    
+
     onMounted(() => {
         element = refreshEle.value as HTMLElement;
-        
+
         element.addEventListener('scroll', _.debounce(_loadMore, 200)); // 防抖
     })
-    
+
     // 可更改loading、hasMore等状态
     const isLoading = computed(() => {
         return store.state.home.homeList.loading
@@ -473,14 +473,14 @@ export default defineComponent({
 	setup() {
         const showFlag = ref(false);
         const showToast = (() => {
-        	showFlag.value = true;    
+        	showFlag.value = true;
         });
-        
+
         return {
             showFlag,
             showToast
         }
-    }  
+    }
 })
 ```
 

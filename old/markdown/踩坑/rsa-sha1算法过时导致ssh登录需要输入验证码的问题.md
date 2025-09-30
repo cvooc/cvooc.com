@@ -6,7 +6,7 @@
 
 之前遇到一个问题, gitlab配置了ssh连接,但在git bash中直接拉取代码会提示输入密码, 但相同的ssh key配置到github上后却可以正常使用连接
 
-![ssh无法连接](static/img/rsa-sha1算法过时导致ssh登录需要输入验证码的问题/1.png)
+![ssh无法连接](/static/img/rsa-sha1算法过时导致ssh登录需要输入验证码的问题/1.png)
 
 通过 ssh -vvvT 打印日志我发现问题所在
 
@@ -16,7 +16,7 @@
 
 ```
 
-![ssh无法连接](static/img/rsa-sha1算法过时导致ssh登录需要输入验证码的问题/2.png)
+![ssh无法连接](/static/img/rsa-sha1算法过时导致ssh登录需要输入验证码的问题/2.png)
 
 看到这段输入, 我们可以确定问题了, 服务器没有找到对应的签名算法
 
@@ -44,15 +44,15 @@ ssh-keygen -t rsa -C 'xxx@xxx.com'
 
 1.
 
-![ssh无法连接](static/img/rsa-sha1算法过时导致ssh登录需要输入验证码的问题/3.png)
+![ssh无法连接](/static/img/rsa-sha1算法过时导致ssh登录需要输入验证码的问题/3.png)
 
-2. 
+2.
 
-![ssh无法连接](static/img/rsa-sha1算法过时导致ssh登录需要输入验证码的问题/4.png)
+![ssh无法连接](/static/img/rsa-sha1算法过时导致ssh登录需要输入验证码的问题/4.png)
 
-3. 
+3.
 
-![ssh无法连接](static/img/rsa-sha1算法过时导致ssh登录需要输入验证码的问题/5.png)
+![ssh无法连接](/static/img/rsa-sha1算法过时导致ssh登录需要输入验证码的问题/5.png)
 
 ## 解决方法
 

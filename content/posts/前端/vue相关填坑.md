@@ -1,18 +1,32 @@
-最后更新时间: 2019年6月12日 14:27:06
++++
+author = "cvooc"
+title = "vue相关填坑"
+date = "2019-06-12 14:27:06"
+description = "vue相关填坑"
+tags = [
+    "前端",
+    "vue",
+    "踩坑",
+]
++++
 
 # 前言
-此文章用于记录vue的填坑
 
-## build后html无引号
+此文章用于记录 vue 的填坑
 
-vue-cli 3.0后项目结构发生了变化,故之前cli2.0的修改配置的方法已失效,而新的配置路径我暂时没有研究透彻.
+## build 后 html 无引号
+
+vue-cli 3.0 后项目结构发生了变化,故之前 cli2.0 的修改配置的方法已失效,而新的配置路径我暂时没有研究透彻.
 目前发现的简单粗暴的方法为修改
+
 ```js
 项目路径\node_modules\@vue\cli-service\lib\config\app.js
 ```
-修改该js中的 removeAttributeQuotes: true,改为false .然后重新build,即可修复html无引号的问题
+
+修改该 js 中的 removeAttributeQuotes: true,改为 false .然后重新 build,即可修复 html 无引号的问题
 
 ## 获取兄弟,子,父元素
+
 ```js
 <button @click = “clickfun($event)”>点击</button>
 
@@ -34,7 +48,7 @@ clickfun(e) {
     e.currentTarget.parentElement
     # 获得点击元素的前一个元素的第一个子元素的HTML值
     e.currentTarget.previousElementSibling.firstElementChild.innerHTML
- 
+
     }
 },
 ```
