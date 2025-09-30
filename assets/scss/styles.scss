@@ -181,6 +181,7 @@ a.heading-link {
             border-bottom: 1px solid #6f6e6e;
             padding-bottom: 0.3em;
         }
+        strong,
         a {
             color: #fe8019;
             text-decoration: none;
@@ -201,7 +202,8 @@ a.heading-link {
         }
 
         code {
-            margin: 0.1rem;
+            padding: 0.2rem;
+            margin: 0.2rem;
             border: none;
             overflow: visible;
             overflow-wrap: anywhere;
