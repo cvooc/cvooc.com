@@ -9,7 +9,7 @@
     <section>
       {{ .Content }}
       <ul reversed class="list">
-        {{ range .Pages.ByDate "asc" }}
+        {{ range .Pages.ByDate.Reverse }}
           <li>
             <a class="link" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}
             </a>
