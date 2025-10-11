@@ -1,0 +1,23 @@
+<div class="post">
+    <div class="post-content">
+        <!-- <div id="memos"></div> -->
+        <div id="memo-list"></div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const bbUrl = "https://memos.foo.run/api/v1/memos?pageSize=99&filter='随想' in tags";
+        fetch(bbUrl)
+            .then((res) => res.json())
+            .then((resdata) => {
+                document.querySelector("#memo-list").innerHTML = `<div class="memos-sswrap"><div class="memos-sslist">${resdata.memos
+                    .map((o) => {
+                        const dTime = new Date(o.displayTime).toLocaleString();
+                        return `<pre><p>${o.content}</p><div><time class="g time" datetime="${dTime}">${dTime}</time> ∙ ${o.tags
+                            .map((tag) => `<a href="//memos.foo.run/${o.name}">${tag}</a>`)
+                            .join("")}</div></pre>`;
+                    })
+                    .join("")}</div></div>`;
+            });
+    });
+</script>

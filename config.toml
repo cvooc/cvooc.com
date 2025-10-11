@@ -56,10 +56,15 @@ title = 'cvooc'
     url = "/about/"
     weight = 4
   [[menu.main]]
+    identifier = "memos"
+    name = "Memos"
+    url = "/memos/"
+    weight = 4
+  [[menu.main]]
     identifier = "github"
     name = "Github"
     url = "https://github.com/cvooc"
-    weight = 4
+    weight = 6
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
