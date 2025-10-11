@@ -6,13 +6,15 @@
   <main id="main home-main">
     <div class="content">
       {{ partial "header.html" . }}
-      {{ .Content }}
-      <!-- {{- with .Site.Params.social }}
-          <div id="home-social">
-            {{ partialCached "social-icons.html" . }}
-          </div>
-      {{ end }} -->
-      {{ if gt (len ( where .Site.RegularPages "Section" "posts" )) 0 }}
+      <section>
+        {{ .Content }}
+        <!-- {{- with .Site.Params.social }}
+        <div id="home-social">
+          {{ partialCached "social-icons.html" . }}
+        </div>
+        {{ end }} -->
+        {{ if gt (len ( where .Site.RegularPages "Section" "posts" )) 0 }}
+      </section>
       <h1>Latest Post</h1>
       <section>
         {{ range (first .Site.Params.items (where .Site.RegularPages "Section" "posts" ).ByDate.Reverse) }}
