@@ -1,8 +1,8 @@
 +++
 author = "cvooc"
-title = "py+pug+stylus完全括号再见指南"
+title = "py-pug-stylus完全括号再见指南"
 date = "2021-01-28 22:45:37"
-description = "py+pug+stylus完全括号再见指南"
+description = "py-pug-stylus完全括号再见指南"
 tags = [
     "花活",
     "TODO",
@@ -11,7 +11,7 @@ tags = [
 ]
 +++
 
-# py+pug+stylus 完全括号再见指南
+# py-pug-stylus 完全括号再见指南
 
 ## 说明(花活警告)
 

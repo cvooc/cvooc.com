@@ -1,8 +1,8 @@
 +++
 author = "cvooc"
-title = "glm4.6+claude-code编码体验"
+title = "glm4.6搭配claude-code编码体验"
 date = "2025-10-16 10:35:49"
-description = "glm4.6+claude-code编码体验"
+description = "glm4.6搭配claude-code编码体验"
 tags = [
     "花活",
     "AI",

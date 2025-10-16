@@ -1,8 +1,8 @@
 +++
 author = "cvooc"
-title = "PicGo+Gitee做图床"
+title = "PicGo-Gitee做图床"
 date = "2019-08-12 17:34:17"
-description = "PicGo+Gitee做图床"
+description = "PicGo-Gitee做图床"
 tags = [
     "技巧",
     "图床",

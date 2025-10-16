@@ -11,7 +11,7 @@
       <ul reversed class="list">
         {{ range .Pages.ByTitle }}
           <li>
-            <a class="link" href="{{ .Permalink | safeHTML }}" title="{{ .Title }}">{{ .Title }}
+            <a class="link" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}
             </a>
             <time class="g time" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
           </li>
