@@ -1,5 +1,7 @@
 baseURL = 'https://cvooc.com'
 languageCode = 'zh-cn'
+# 强制 Hugo 渲染发布时间在未来的博文
+buildFuture = true
 # 博客名称
 title = 'cvooc'
 # 主题
