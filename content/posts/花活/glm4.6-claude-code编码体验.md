@@ -83,6 +83,8 @@ ccusage monthly --json > usage.json  # 导出 JSON 做二次分析
 
 claude.md是一个特殊文件, Claude在开始对话时会自动将其拉入上下文.
 cc会默认读取项目根目录的 claude.md(称之为记忆), 可以把项目的核心概念/规范/TODO写在此处.
+启动时, cc会**递归向上**从当前目录开始查找 CLAUDE.md 或 CLAUDE.local.md(目前主流是 CLAUDE.md)文件,并把这些内容作为"记忆"或"上下文"读入.
+如果某些子目录(子树)也有 CLAUDE.md,在进入这些子目录读取这些子树时,这些子树中的 CLAUDE.md 也会被包含进上下文. 它不会在启动时就预先载入它们.
 
 这使其成为记录以下内容的理想场所：
 
@@ -98,6 +100,19 @@ cc会默认读取项目根目录的 claude.md(称之为记忆), 可以把项目�
 **CLAUDE.md文件没有要求的格式.我们建议保持简洁且人类可读.**
 
 > 在cc终端内输入 # + 内容. 可以快捷将内容更新入 claude.md 内.
+
+#### 引入其他md内容
+
+claude.md 文件可以使用 @path/to/file.md 语法导入其他文件,以把说明或配置拆成多个文件.
+
+**为了避免冲突或安全隐患，导入语法在 Markdown 的代码块或反引号（ ``` 或 `）中不会被解释为导入**
+
+```markdown
+// 相对路径和绝对路径都可以
+- 项目介绍 @docs/instructions.md 
+- 个人偏好设置 @~/.claude/my-project-instructions.md
+- 加上``后，不被视为导入：`@anthropic-ai/claude-code`
+```
 
 #### 核心开关 & 行为约束
 
