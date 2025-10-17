@@ -18,7 +18,7 @@ title = 'cvooc'
 
   [params.comments]
     enabled = true
-    githubRepo = 'cvooc/cvooc.com'
+    githubRepo = 'cvooc/cvooc.github.io'
     theme = 'gruvbox-dark'
     [[params.social]]
       name = "twitter"

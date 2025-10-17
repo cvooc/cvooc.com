@@ -3,6 +3,7 @@
 <img class="avatar" src="./static/assets/avatar.svg" alt="avatar">
 
 - 📺 Blog: https://cvooc.com
+- 📦 BlogBackup: https://cvooc.github.io
 - ❤️ Github: https://github.com/cvooc
 - 🐧 QQ-QID: [cvooc](https://foo.run/s/qq)
 - 📧 Email: cvooc@qq.com
