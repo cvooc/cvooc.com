@@ -12,7 +12,7 @@
             .then((resdata) => {
                 document.querySelector("#memo-list").innerHTML = `<div class="memos-sswrap"><div class="memos-sslist">${resdata.memos
                     .map((o) => {
-                        const dTime = new Date(o.displayTime).toLocaleString();
+                        const dTime = new Date(o.createTime).toLocaleString();
                         return `<pre><p>${o.content}</p><div><time class="g time" datetime="${dTime}">${dTime}</time> ∙ ${o.tags
                             .map((tag) => `<a href="//memos.foo.run/${o.name}">${tag}</a>`)
                             .join("")}</div></pre>`;
