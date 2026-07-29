@@ -6,7 +6,7 @@
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const bbUrl = "https://memos.foo.run/api/v1/memos?pageSize=99&filter='随想' in tags";
+        const bbUrl = "https://foo.run/memos-proxy/";
         fetch(bbUrl)
             .then((res) => res.json())
             .then((resdata) => {
